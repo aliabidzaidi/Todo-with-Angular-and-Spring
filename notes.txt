@@ -1,0 +1,38 @@
+
+Angular --> REST Spring Boot --> Database
+
+Notes
+
+
+nvm install node
+npm install -g @angular/cli
+
+ng help
+	ng new todo - creates application
+	ng serve - deploys application with runtime changes
+	ng lint - compares project with standard, tslint.json all coding standards are mentioned
+	ng build - creates a dist folder for deployment
+	ng test - runs test in new chrome window using Jasmine in spec.ts, (Karma conf.js runner of tests)
+	ng e2e - end to end runs complete integration tests, all tests are in e2e folder & protractor is used to run them
+
+-------------------------------------------------------------------------
+
+Folder description
+	src - app folder contains all our code, component & module
+	assets - images go into this folder
+	environment - multiple configurations for different environments
+	package.json - contains all packages & tools to run angular application, all packages are added when we run npm install, adds them to node_modules
+	.gitignore - contains folder that aren't supposed to be pushed onto the repo
+	main.ts + index.html - bootstrapping angular application, on a higher level index.html uses this test.ts file
+	test.ts - contains all tests
+	polyfill.ts - responsible for compatibility across all browsers
+	style.ts
+
+8- Introduction to components
+
+
+
+
+
+
+
