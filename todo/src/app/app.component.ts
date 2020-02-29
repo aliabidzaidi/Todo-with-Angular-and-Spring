@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  description = 'Using Angular & Java Spring REST creating a Todo Application';
 }
