@@ -1,18 +1,23 @@
-<table border="1">
-    <thead>
-        <tr>
-            <th>Description</th>
-            <th>Target Date</th>
-            <th>Completed</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor='let todo of todos'>
-            <td>{{ todo.description }}</td>
-            <th>{{ todo.targetDate | date}}</th>
-            <th>{{ todo.done }}</th>
-        </tr>
-    </tbody>
-</table>
+<h1> My Todos</h1>
 
+<div class="container my-4">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Target Date</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let todo of todos'>
+                <td>{{ todo.description }}</td>
+                <th>{{ todo.targetDate | date}}</th>
+                <th>{{ todo.done }}</th>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-md btn-primary" routerLink="/welcome/abidzaidi" role="button">Home</a>
+</div>
 <!-- <a routerLink = "/welcome">Home</a> -->

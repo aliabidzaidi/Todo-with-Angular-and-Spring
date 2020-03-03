@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   username = 'abidzaidi';
-  password = '';
+  password = 'password';
   isValid = false;
   errorMessage = 'Invalid User Credentials';
 
