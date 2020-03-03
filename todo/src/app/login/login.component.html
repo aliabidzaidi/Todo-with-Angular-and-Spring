@@ -1,4 +1,4 @@
-<!-- <small *ngIf='isValid'>{{ errorMessage }}</small>
+<!-- 
 
 <div>
     Username: <input type="text" name="username" [(ngModel)] = "username">  
@@ -32,5 +32,6 @@
       </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" (click) = handleLogin()>Sign in</button>
+    <p class="text-danger text-center my-3" *ngIf='isValid'>{{ errorMessage }}</p>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
   </form>
