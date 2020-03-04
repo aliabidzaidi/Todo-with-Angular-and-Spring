@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DummyAuthenticationService } from '../services/dummy-authentication.service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +11,11 @@ export class WelcomeComponent implements OnInit {
 
   userName = '';
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router, private authService: DummyAuthenticationService) {
+    if (!this.authService.IsUserLoggedIn()) {
+      this.router.navigate(['login']);
+    }
+  }
 
   ngOnInit(): void {
     this.userName = this.route.snapshot.params.name;

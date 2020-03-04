@@ -14,8 +14,11 @@ export class LoginComponent implements OnInit {
   isValid = false;
   errorMessage = 'Invalid User Credentials';
 
-  constructor(private router: Router, 
-    private authService : DummyAuthenticationService) { }
+  constructor(private router: Router, private authService: DummyAuthenticationService) {
+    if (this.authService.IsUserLoggedIn()) {
+      this.router.navigate(['welcome', this.username]);
+    }
+  }
 
   ngOnInit(): void {
   }

@@ -19,7 +19,7 @@ export class DummyAuthenticationService {
   }
 
   IsUserLoggedIn() {
-    let user = sessionStorage.getItem('authenticatedUser');
+    const user = sessionStorage.getItem('authenticatedUser');
     return !(user == null);
   }
 
