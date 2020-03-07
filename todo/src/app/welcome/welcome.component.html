@@ -1,9 +1,12 @@
+<div class="jumbotron">
+    <h1>Welcome {{ userName }}</h1>
+    <p class="lead">This example is a quick exercise where you manage your Todo List</p>
+    <a class="btn btn-lg btn-primary" routerLink="/todos" role="button">My Todos &raquo;</a>
+</div>
+
 <div>
-
-    <div class="jumbotron">
-        <h1>Welcome {{ userName }}</h1>
-        <p class="lead">This example is a quick exercise where you manage your Todo List</p>
-        <a class="btn btn-lg btn-primary" routerLink="/todos" role="button">My Todos &raquo;</a>
+    <button class="btn btn-secondary" (click) = getHelloWorldMessageWithParams() >Call REST API &raquo;</button>
+    <div *ngIf="message">
+        <h2>Response : <span>{{ message }}</span></h2>
     </div>
-
 </div>
