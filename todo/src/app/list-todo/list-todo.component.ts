@@ -34,9 +34,9 @@ export class ListTodoComponent implements OnInit {
 
 
   constructor(
-      private todoService: TodoDataService, 
-      private router: Router
-    ) { }
+    private todoService: TodoDataService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getTodos();
@@ -69,6 +69,10 @@ export class ListTodoComponent implements OnInit {
         this.errorMessage = 'An error occurred while deleting Todo';
       }
     );
+  }
+
+  addTodo() {
+    this.router.navigate(['todo', -1]);
   }
 
 }

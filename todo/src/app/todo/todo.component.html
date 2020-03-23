@@ -3,18 +3,28 @@
   <div class="container">
 
     <h2>Todo</h2>
-    <fieldset class="form-group">
-      <label>Description</label>
-      <input name="description" [(ngModel)]="todo.description" type="text" class="form-control" required="required">
-    </fieldset>
 
-    <fieldset class="form-group">
-      <label>Target Date</label>
-      <input name="completedDate" [ngModel]="todo.completedDate | date:'yyyy-MM-dd'"
-        (ngModelChange)="todo.completedDate = $event" type="date" class="form-control" required="required">
-    </fieldset>
+    <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">
+      Please enter correct fields
+      <ul>
+        <li *ngIf="todoForm.dirty && description.invalid">Please enter valid description</li>
+        <li *ngIf="todoForm.dirty && completedDate.invalid">Please enter valid Date</li>
+      </ul>
+    </div>
+    <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+      <fieldset class="form-group">
+        <label>Description</label>
+        <input name="description" #description="ngModel" [(ngModel)]="todo.description" type="text" class="form-control"
+          required="required" minlength="5" maxlength="255">
+      </fieldset>
 
-    <button class="btn btn-success" (click)="saveTodo()">Save</button>
+      <fieldset class="form-group">
+        <label>Target Date</label>
+        <input name="completedDate" #completedDate="ngModel" [ngModel]="todo.completedDate | date:'yyyy-MM-dd'"
+          (ngModelChange)="todo.completedDate = $event" type="date" class="form-control" required="required">
+      </fieldset>
 
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
   </div>
 </div>
